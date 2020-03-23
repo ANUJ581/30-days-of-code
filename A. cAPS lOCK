@@ -1,0 +1,44 @@
+/*https://codeforces.com/problemset/problem/131/A*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        Scanner scan=new Scanner(System.in);
+        String s=scan.next();
+        char[] ch=new char[s.length()];
+        int i=0;
+        for(char c:s.toCharArray()){
+            ch[i]=c;
+            i++;
+        }
+        String s1=Character.toString(s.charAt(0));
+        
+          if(Character.isLowerCase(ch[0]) && restcaps(ch))
+            System.out.print(s1.toUpperCase()+s.substring(1,s.length()).toLowerCase());
+          
+          else if(Character.isUpperCase(ch[0]) && restcaps(ch))
+            System.out.print(s.toLowerCase());
+          else if(Character.isLowerCase(ch[0]) && restcaps(ch))   
+            System.out.print(s.toUpperCase());
+          else
+            System.out.print(s);
+        
+    }
+        
+    public static boolean restcaps(char[] ch){
+        for(int i=1;i<ch.length;i++){
+            if(Character.isUpperCase(ch[i])== false){
+            return false; 
+            }
+        }
+        return true;
+    }
+        
+    }
+    
