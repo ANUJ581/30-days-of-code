@@ -1,0 +1,42 @@
+/* https://codeforces.com/contest/474/problem/B */
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+public class Codechef
+{
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        Scanner scan = new Scanner(System.in);
+        int n=scan.nextInt();
+        int[] arr=new int[n];
+        arr[0]=scan.nextInt();
+        for(int i=0;i<n-1;i++) arr[i+1]=arr[i]+scan.nextInt(); 
+       int m=scan.nextInt();
+        for(int j=0;j<m;j++)
+            solveQuery(scan.nextInt(),arr);
+        
+    }
+    public static void solveQuery(int key,int[] arr){
+        System.out.println(binarysearch(key,arr)+1);
+    }
+    public static int binarysearch(int key,int[] arr){
+        int l=0;
+        int r=arr.length-1;
+        while(l<r){
+            int mid=(l+r)/2;
+            
+            if(key==arr[mid])
+                return mid;
+            else if(key<arr[mid])
+                r=mid;
+            else if(key>arr[mid])
+                l=mid+1;
+        }
+        return l;
+        
+    }
+    
+}
