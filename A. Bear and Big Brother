@@ -1,0 +1,24 @@
+/* https://codeforces.com/contest/791/problem/A */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+public class Codechef{
+    
+	public static void main (String[] args) throws java.lang.Exception{
+	    
+        Scanner scan = new Scanner(System.in);
+        int limak=scan.nextInt();
+        int bob=scan.nextInt();
+        int count=0;
+        
+        while(limak<=bob){
+            limak*=3;
+            bob*=2;
+            count++;
+        }
+    	System.out.print(count);
+	}
+}
