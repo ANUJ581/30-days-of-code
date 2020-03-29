@@ -1,0 +1,30 @@
+/*https://codeforces.com/contest/492/problem/B */
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+public class Codechef{
+    
+	public static void main (String[] args) throws java.lang.Exception{
+	    
+        Scanner scan = new Scanner(System.in);
+        int n=scan.nextInt();
+        int l=scan.nextInt();
+        int[] arr=new int[n];
+        
+        for(int i=0;i<n;i++)    arr[i]=scan.nextInt();
+        Arrays.sort(arr);
+        double dis=0,maxdis=0;
+        for(int x=0;x<arr.length-1;x++){
+            dis=arr[x+1]-arr[x];
+            if(dis>maxdis)
+            maxdis=dis;
+        }
+        maxdis=maxdis/2;
+        double rightdis=l-arr[arr.length-1];
+        double leftdis=arr[0];
+        double d= (rightdis>leftdis)?(rightdis>maxdis?rightdis:maxdis):(leftdis>maxdis?leftdis:maxdis);
+        System.out.print(d);
+	}
+}
