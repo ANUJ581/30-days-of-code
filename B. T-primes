@@ -1,0 +1,44 @@
+/* https://codeforces.com/contest/230/problem/B  */
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+ 
+public class Solution{
+    public static int limit=1000005;
+    public static boolean[] primes;
+	
+ 
+	public static void main (String[] args) throws java.lang.Exception{
+	    precompute();
+	    Scanner scan = new Scanner(System.in);
+		int n=scan.nextInt();
+ 
+	    for(int j=0;j<n;j++)
+	        check(scan.nextLong());
+	    
+	
+	}
+	public static void check(long arr){
+	
+	   long sqrt=(int)Math.sqrt(arr);
+	   if(sqrt*sqrt==arr && primes[(int)sqrt]==true)
+	        System.out.println("YES");
+        else
+            System.out.println("NO");
+	        
+	            
+	}
+	public static void precompute(){
+	    primes=new boolean[limit+1];
+	    Arrays.fill(primes,true);
+	    primes[0]=primes[1]=false;
+	    for(int x=2;x<=limit;x++){
+	            
+	        if(primes[x]==true){
+	            for(int y=x*2;y<=limit;y+=x)
+	                primes[y]=false;
+	        }
+	    }
+	}
+}
