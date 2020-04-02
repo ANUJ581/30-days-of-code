@@ -1,0 +1,30 @@
+/* https://codeforces.com/contest/80/problem/B */
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+public class Codechef{
+    
+	public static void main (String[] args) throws java.lang.Exception{
+	    
+        Scanner scan = new Scanner(System.in);
+        String s=scan.next();
+    
+        int[] arr=new int[2];int i=0;
+        for(String str:s.split(":")){
+           arr[i]=Integer.parseInt(str);
+           i++;
+        }
+        int h=arr[0];
+        int m=arr[1];
+        if(h>12)
+            h-=12;
+        if(h==12)
+            h=0;
+            
+        
+        System.out.print(30*h + 0.5*m + " "+ 6*m);
+        
+	}
+}
