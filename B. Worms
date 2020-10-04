@@ -15,9 +15,11 @@ public class Codechef
         arr[0]=scan.nextInt();
         for(int i=0;i<n-1;i++) arr[i+1]=arr[i]+scan.nextInt(); 
        int m=scan.nextInt();
-        for(int j=0;j<m;j++)
+        int j=0;
+        while(j<m){
             solveQuery(scan.nextInt(),arr);
-        
+            j++
+        }
     }
     public static void solveQuery(int key,int[] arr){
         System.out.println(binarysearch(key,arr)+1);
