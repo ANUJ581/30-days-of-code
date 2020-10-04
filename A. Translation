@@ -21,9 +21,11 @@ public class Solution{
 	}
 	public static boolean issame(String s1,String s2){
 	       String s="",reverse="";
-	       for(int i=s2.length();i>0;i--){
+	       int i=s2.length();
+	       while(i>0){
 	           s=s2.substring(i-1,i);
 	           reverse+=s;
+		   i--
 	           
 	       }
 	       
